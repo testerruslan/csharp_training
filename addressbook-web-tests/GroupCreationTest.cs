@@ -58,6 +58,9 @@ namespace WebAddressbookTests
             driver.FindElement(By.LinkText("Logout")).Click();
         }
 
+        public string Name;
+
+
         private void SubmitGroupCreation()
         {
                   driver.FindElement(By.Name("submit")).Click();

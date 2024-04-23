@@ -10,14 +10,16 @@ namespace WebAddressbookTests
     {
         private string name;
         private string header = "";
-        private string footer;
-        private string v;
+        private string footer = "";
 
-        public GroupData(string v)
+
+        public GroupData(string name) 
         {
-            this.v = v;
+            this.name = name;
         }
+     
 
+       
         public string Name
         { 
             get 
