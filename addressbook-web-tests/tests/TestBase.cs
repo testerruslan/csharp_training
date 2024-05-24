@@ -36,28 +36,6 @@ namespace WebAddressbookTests
         protected string baseURL;
 
 
-        [SetUp]
-        public void SetupTest()
-        {
-            driver = new FirefoxDriver();
-            baseURL = "http://localhost/addressbook/addressbook/";
-            verificationErrors = new StringBuilder();
-        }
-
-        [TearDown]
-        public void TeardownTest()
-        {
-            try
-            {
-                driver.Quit();
-            }
-            catch (Exception)
-            {
-                // Ignore errors if unable to close the browser
-            }
-            Assert.AreEqual("", verificationErrors.ToString());
-        }
-
         protected void GoToHomePage()
         {
             driver.Navigate().GoToUrl("http://localhost/addressbook/addressbook/");
