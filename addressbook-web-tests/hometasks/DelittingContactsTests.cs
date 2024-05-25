@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Docker.DotNet.Models;
+using NUnit.Framework;
 
 
 namespace WebAddressbookTests
@@ -14,10 +15,11 @@ namespace WebAddressbookTests
            
             
             app.Groups.CreatDelittingContacts(group);
-
-
-
+            Driver.SwitchTo().Alert().private Accept();
         }
+
+        
     }
+
 }
 

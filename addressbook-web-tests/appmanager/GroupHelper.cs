@@ -50,6 +50,24 @@ namespace WebAddressbookTests
             return this;
         }
 
+        public GroupHelper Modify2(int v, ContactsData newData)
+        {
+            manager.Navigator.GoToContactsPage();
+            SelectContacts();
+            InitContactsModification();
+            FillContactsForm(newData);
+            SubmitContactsCreation();
+            ReturnToContactsPage();
+
+            return this;
+        }
+
+        public GroupHelper InitContactsModification()
+        {
+            driver.FindElement(By.Name("edit")).Click();
+            return this;
+        }
+
         public GroupHelper Modify(int p, GroupData newData)
         {
             manager.Navigator.GoToGroupsPage();
@@ -183,6 +201,6 @@ namespace WebAddressbookTests
             return this;
         }
 
-       
+        
     }
 }
