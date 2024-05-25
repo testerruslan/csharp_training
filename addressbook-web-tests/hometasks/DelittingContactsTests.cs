@@ -6,17 +6,16 @@ namespace WebAddressbookTests
     [TestFixture]
     public class DelittingContactsTests : TestBase
     {
-       
+        private GroupData group;
 
         [Test]
         public void DelittingContactsTest()
         {
-            GoToHomePage();
-            Login(new AccountData("admin","secret"));
-            GoToContactsPageDelit();
-            SelectContacts();
-            RemoveContacts();
-            ReturnToContactsPage();
+           
+            
+            app.Groups.CreatDelittingContacts(group);
+
+
 
         }
     }

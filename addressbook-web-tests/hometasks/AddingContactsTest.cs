@@ -12,19 +12,31 @@ namespace WebAddressbookTests
         [Test]
         public void AddingContactsTests()
         {
-            GoToHomePage();
-            Login(new AccountData ("admin", "secret"));
-            GoToContactsPage();
-            InitNewContacts();
+           
+            
             ContactsData group = new ContactsData("Test");
             group.Lastname = "Testov";
             group.Address = "Russia";
             group.Email = "tester@ya.ru";
             group.Home = "1234567890";
             group.Mobile = "1234567890";
-            FillContactsForm(group);
-            SubmitContactsCreation();
-            ReturnToContactsPage();
+            app.Groups.CreatAddingContacts(group);
+              
+        }
+
+        [Test]
+        public void EmptyAddingContactsTests()
+        {
+
+            
+            ContactsData group = new ContactsData("Test");
+            group.Lastname = "";
+            group.Address = "";
+            group.Email = "";
+            group.Home = "";
+            group.Mobile = "";
+            app.Groups.CreatAddingContacts(group);
+
         }
     }
 }
