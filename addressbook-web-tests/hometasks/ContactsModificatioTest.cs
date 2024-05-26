@@ -11,6 +11,8 @@ namespace WebAddressbookTests
     [TestFixture]
     public class ContactsModificatioTest : TestBase
     {
+        private object v;
+
         [Test]
         public void ContactsModificationTests()
         {
@@ -20,7 +22,7 @@ namespace WebAddressbookTests
             newData.Email = "ddd@ya.ru";
             newData.Home = "000";
             newData.Mobile = "111";
-            app.Groups.Modify2(1, newData);
+            app.Groups.Modify2(v, newData);
         }
     }
 }

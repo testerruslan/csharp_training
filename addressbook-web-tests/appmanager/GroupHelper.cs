@@ -40,6 +40,11 @@ namespace WebAddressbookTests
             return this;
         }
 
+        private void SelectContacts()
+        {
+            throw new NotImplementedException();
+        }
+
         public GroupHelper Create(GroupData group)
         {
             manager.Navigator.GoToGroupsPage();
@@ -53,7 +58,7 @@ namespace WebAddressbookTests
         public GroupHelper Modify2(int v, ContactsData newData)
         {
             manager.Navigator.GoToContactsPage();
-            SelectContacts();
+            SelectContacts(1);
             InitContactsModification();
             FillContactsForm(newData);
             SubmitContactsCreation();
@@ -189,7 +194,7 @@ namespace WebAddressbookTests
             return this;
         }
 
-        public GroupHelper SelectContacts()
+        public GroupHelper SelectContacts(int v)
         {
             driver.FindElement(By.Id("1")).Click();
             return this;
@@ -201,9 +206,16 @@ namespace WebAddressbookTests
             return this;
         }
 
-        internal void CreatDelittingContacts(GroupData group)
+        public GroupHelper CreatDelittingContacts(GroupData group)
         {
-            throw new NotImplementedException();
+            
+            return this;
+        }
+
+        public GroupHelper Modify2(object v, ContactsData newData)
+        {
+            
+            return this;
         }
     }
 }
