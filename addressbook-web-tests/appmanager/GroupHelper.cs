@@ -121,18 +121,29 @@ namespace WebAddressbookTests
 
         public GroupHelper FillGroupForm(GroupData group)
         {
-            driver.FindElement(By.Name("group_name")).Click();
-            driver.FindElement(By.Name("group_name")).Clear();
-            driver.FindElement(By.Name("group_name")).SendKeys(group.Name);
-            driver.FindElement(By.Name("group_header")).Click();
-            driver.FindElement(By.Name("group_header")).Clear();
-            driver.FindElement(By.Name("group_header")).SendKeys(group.Header);
-            driver.FindElement(By.Name("group_footer")).Click();
-            driver.FindElement(By.Name("group_footer")).Clear();
-            driver.FindElement(By.Name("group_footer")).SendKeys(group.Footer);
+            
+            Type(By.Name("group_name"), group.Name);
+            Type(By.Name("group_header"), group.Header);
+            Type(By.Name("group_footer"), group.Footer);
 
             return this;
         }
+
+       
+
+        public GroupHelper FillContactsForm(ContactsData group)
+        {
+            Type1(By.Name("firstname"), group.Name);
+            Type1(By.Name("lastname"), group.Lastname);
+            Type1(By.Name("address"), group.Address);
+            Type1(By.Name("email"), group.Email);
+            Type1(By.Name("home"), group.Home);
+            Type1(By.Name("mobile"), group.Mobile);
+           
+            return this;
+        }
+
+       
 
         public GroupHelper SubmitGroupCreation()
         {
@@ -158,29 +169,7 @@ namespace WebAddressbookTests
             return this;
         }
 
-        public GroupHelper FillContactsForm(ContactsData group)
-        {
-            driver.FindElement(By.Name("firstname")).Clear();
-            driver.FindElement(By.Name("firstname")).SendKeys(group.Name);
-            driver.FindElement(By.Name("lastname")).Click();
-            driver.FindElement(By.Name("lastname")).Clear();
-            driver.FindElement(By.Name("lastname")).SendKeys(group.Lastname);
-            driver.FindElement(By.Name("address")).Click();
-            driver.FindElement(By.Name("address")).Clear();
-            driver.FindElement(By.Name("address")).SendKeys(group.Address);
-            driver.FindElement(By.Name("email")).Click();
-            driver.FindElement(By.Name("email")).Clear();
-            driver.FindElement(By.Name("email")).SendKeys(group.Email);
-            driver.FindElement(By.Name("home")).Click();
-            driver.FindElement(By.Name("home")).Clear();
-            driver.FindElement(By.Name("home")).SendKeys(group.Home);
-            driver.FindElement(By.Name("mobile")).Click();
-            driver.FindElement(By.Name("mobile")).Clear();
-            driver.FindElement(By.Name("mobile")).SendKeys(group.Mobile);
-            driver.FindElement(By.XPath("//div[@id='content']/form/input[20]")).Click();
-
-            return this;
-        }
+      
 
         public GroupHelper SubmitContactsCreation()
         {
