@@ -18,7 +18,7 @@ namespace WebAddressbookTests
         }
 
 
-        public GroupHelper CreatAddingContacts(GroupData group)
+        public GroupHelper CreatAddingContacts(ContactsData group)
         {
             manager.Navigator.GoToContactsPage();
             InitNewContacts();
@@ -31,7 +31,7 @@ namespace WebAddressbookTests
 
        
 
-        public GroupHelper CreatDelittingContacts(GroupData group)
+        public GroupHelper CreatDelittingContacts(ContactsData group)
         {
             manager.Navigator.GoToContactsPageDelit();
             SelectContacts();
@@ -201,6 +201,9 @@ namespace WebAddressbookTests
             return this;
         }
 
-        
+        internal void CreatDelittingContacts(GroupData group)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

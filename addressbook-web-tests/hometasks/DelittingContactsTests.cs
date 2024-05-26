@@ -15,7 +15,7 @@ namespace WebAddressbookTests
            
             
             app.Groups.CreatDelittingContacts(group);
-            Driver.SwitchTo().Alert().private Accept();
+           
         }
 
         
