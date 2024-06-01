@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
+
 
 namespace WebAddresbookTest
 {
-    internal class ContactsData
+    public class ContactsData
     {
         private string firstname;
         private string middlename = "";
         private string lastname = "";
         
+        public ContactsData(string firstname)
+        {
+            Firstname = firstname;
+    
+        }
 
        
 
@@ -19,11 +26,11 @@ namespace WebAddresbookTest
         { 
             get 
             {
-                return this.firstname;
+                return firstname;
             }
             set 
             {
-                this.firstname = value;
+                firstname = value;
             }
         }
 
@@ -31,11 +38,11 @@ namespace WebAddresbookTest
         {
             get 
             {
-            return this.middlename;
+            return middlename;
             }
             set
             {
-                this.middlename = value;
+               middlename = value;
             }
         }
 
@@ -43,11 +50,11 @@ namespace WebAddresbookTest
         {
             get 
             {
-                return this.lastname;
+                return lastname;
             }
             set 
             {
-                this.lastname = value;
+                lastname = value;
             }
         }
     }

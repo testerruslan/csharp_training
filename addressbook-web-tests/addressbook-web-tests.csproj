@@ -87,6 +87,7 @@
     <Compile Include="DeliteGroup.cs" />
     <Compile Include="AddContact.cs" />
     <Compile Include="DelitContact.cs" />
+    <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace WebAddresbookTest
 {
-    internal class GroupData
+    public class GroupData
     {
         private string name;
         private string header = "";
         private string footer = "";
 
         
+        public GroupData(string name)
+        {
+            Name = name;
+           
+        }
 
         public string Name
         { 
@@ -42,11 +47,11 @@ namespace WebAddresbookTest
         {
             get
             {
-                return this.footer;
+                return footer;
             }
             set
             {
-                this.footer = value;
+                footer = value;
             }
         }
 
