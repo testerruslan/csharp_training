@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
-namespace addressbook_web_tests
+namespace WebAddresbookTest
 {
     [TestFixture]
     public class DelContact
@@ -42,19 +42,44 @@ namespace addressbook_web_tests
         [Test]
         public void DelContacts()
         {
-            driver.Navigate().GoToUrl(baseURL);
+            OpenHomePage();
+            Login("admin", "secret");
+            GoToContactsPage();
+            SelectionContactsPage();
+            DelitContactsPage();
+
+        }
+
+        private void DelitContactsPage()
+        {
+            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+        }
+
+        private void SelectionContactsPage()
+        {
+            driver.FindElement(By.Id("16")).Click();
+        }
+
+        private void GoToContactsPage()
+        {
+            driver.FindElement(By.LinkText("home")).Click();
+        }
+
+        private void Login(string username, string password)
+        {
             driver.FindElement(By.Name("user")).Click();
             driver.FindElement(By.Name("user")).Clear();
-            driver.FindElement(By.Name("user")).SendKeys("admin");
+            driver.FindElement(By.Name("user")).SendKeys(username);
             driver.FindElement(By.Name("pass")).Clear();
-            driver.FindElement(By.Name("pass")).SendKeys("secret");
+            driver.FindElement(By.Name("pass")).SendKeys(password);
             driver.FindElement(By.XPath("//input[@value='Login']")).Click();
-            driver.FindElement(By.LinkText("home")).Click();
-            driver.FindElement(By.Id("16")).Click();
-            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
-            driver.FindElement(By.LinkText("Logout")).Click();
-           
         }
+
+        private void OpenHomePage()
+        {
+            driver.Navigate().GoToUrl(baseURL);
+        }
+
         private bool IsElementPresent(By by)
         {
             try
