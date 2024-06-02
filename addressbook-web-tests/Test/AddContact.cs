@@ -16,16 +16,25 @@ namespace WebAddresbookTest
         [Test]
         public void AddContacts()
         {
-            OpenHomePage();
-            Login(new AccountData("admin", "secret"));
-            InitContactssCreation();
+           
             ContactsData group = new ContactsData("aaa");
             group.Middlename = "bbb";
             group.Lastname = "ccc";
-            FillContactsForm(group);
-            SubmitContactsCreation();
-            ReturnToContactsPage();
 
+            app.Contacts.CreateContacts(group);
+                
+        }
+
+        [Test]
+        public void EmptyAddContacts()
+        {
+
+            ContactsData group = new ContactsData("aaa");
+            group.Middlename = "bbb";
+            group.Lastname = "ccc";
+
+            app.Contacts.CreateContacts(group);
+               
         }
     }
 }

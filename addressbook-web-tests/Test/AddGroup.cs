@@ -16,16 +16,25 @@ namespace WebAddresbookTest
         [Test]
         public void AddGroups()
         {
-            OpenHomePage();
-            Login(new AccountData("admin", "secret"));
-            GoToGroupsPage();
-            InitGroupsCreation();
+            
             GroupData group = new GroupData("11");
             group.Header = "22";
             group.Footer = "33";
-            FillGroupForm(group);
-            SubmitGroupCreation();
-            ReturnToGroupsPage();
+
+            app.Groups.CreateGroup(group);
+         
         }
+
+        [Test]
+        public void EmptyAddGroups()
+        {
+            GroupData group = new GroupData("");
+            group.Header = "";
+            group.Footer = "";
+
+            
+            app.Groups.CreateGroup(group);
+        }   
     }
+
 }

@@ -10,20 +10,16 @@ using OpenQA.Selenium.Support.UI;
 namespace WebAddresbookTest
 {
     [TestFixture]
-    public class DelGrop : TestBase
+    public class DelContact : TestBase
     {
-        
+       
 
         [Test]
-        public void DelGrops()
+        public void DelContacts()
         {
-            OpenHomePage();
-            Login(new AccountData("admin", "secret"));
-            GoToGroupsPage();
-            SelectionGroupPage(1);
-            DelitGroupPage();
-            ReturnToGroupsPage();
 
+            app.Contacts.Remowe(1);
+          
         }
     }
 }
