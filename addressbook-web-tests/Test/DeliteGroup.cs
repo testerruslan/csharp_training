@@ -10,7 +10,7 @@ using OpenQA.Selenium.Support.UI;
 namespace WebAddresbookTest
 {
     [TestFixture]
-    public class DelGrop : TestBase
+    public class DelGrop : AuthTestBase
     {
         
 
