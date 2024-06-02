@@ -73,11 +73,38 @@ namespace WebAddresbookTest
         {
             manager.Navigator.GoToGroupsPage();
 
-            SelectionGroupPage(1);
+            SelectionGroupPage(v);
             DelitGroupPage();
             ReturnToGroupsPage();
             return this;
 
+        }
+
+        public GroupHelper Modify(int v, GroupData newData)
+        {
+            manager.Navigator.GoToGroupsPage();
+            SelectionGroupPage(v);
+            InitGroupsModification();
+
+            FillGroupForm(newData);
+            SubmitGroupModification();
+            
+            ReturnToGroupsPage();
+            
+            return this;
+
+        }
+
+        public GroupHelper InitGroupsModification()
+        {
+            driver.FindElement(By.Name("edit")).Click();
+            return this;
+        }
+
+        public GroupHelper SubmitGroupModification()
+        {
+            driver.FindElement(By.Name("update")).Click();
+            return this;
         }
     }
 }

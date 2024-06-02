@@ -29,9 +29,9 @@ namespace WebAddresbookTest
         public void EmptyAddContacts()
         {
 
-            ContactsData group = new ContactsData("aaa");
-            group.Middlename = "bbb";
-            group.Lastname = "ccc";
+            ContactsData group = new ContactsData("");
+            group.Middlename = "";
+            group.Lastname = "";
 
             app.Contacts.CreateContacts(group);
                

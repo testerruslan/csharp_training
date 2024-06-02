@@ -93,6 +93,7 @@
     <Compile Include="Test\DeliteGroup.cs" />
     <Compile Include="Test\AddContact.cs" />
     <Compile Include="Test\DelitContact.cs" />
+    <Compile Include="Test\GroupModificationTests.cs" />
     <Compile Include="Test\TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
